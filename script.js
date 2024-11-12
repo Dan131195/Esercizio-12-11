@@ -88,14 +88,25 @@ Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente
 */
 
 const makeItClickable = function () {
-    
+  const characters = document.querySelector("h1");
+  characters.addEventListener("click", function () {
+    let characters2 = characters.slice(0, -1);
+    return characters2;
+  });
 };
+makeItClickable();
 
 /* ESERCIZIO 10
 Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
  */
 
-const revealFooterLink = function () {};
+const revealFooterLink = function () {
+  const footer = document.querySelector("footer");
+  footer.addEventListener('click', function() {
+    alert("https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents")
+  })
+};
+revealFooterLink();
 
 /* ESERCIZIO 11
 Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
