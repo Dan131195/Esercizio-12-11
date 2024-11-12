@@ -133,8 +133,9 @@ Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fo
 const addRow = function () {
   const tbody = document.createElement("tbody");
   const row = document.createElement("tr");
-  row.innerHTML = '<td><img src = headphones.jpg></td><td>Headphones</td><td>1</td><td>29.99</td>;'
-  tbody.appendChild(row)
+  row.innerHTML =
+    "<td><img src = headphones.jpg></td><td>Headphones</td><td>1</td><td>29.99</td>;";
+  tbody.appendChild(row);
   table.appendChild(tbody);
 };
 addRow();
@@ -143,7 +144,11 @@ addRow();
 Crea una funzione che nasconda le immagini della tabella quando eseguita
 */
 
-const hideAllImages = function () {};
+const hideAllImages = function () {
+  const img = document.querySelector("img");
+  img.style.visibility = "hidden";
+};
+hideAllImages();
 
 /* EXTRA ESERCIZIO 15
 Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
