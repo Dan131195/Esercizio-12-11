@@ -13,7 +13,7 @@ Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
 */
 
 const addClassToTitle = function () {
-  changedTitle.className = "myHeading";
+  changedTitle.className += "myHeading";
 };
 addClassToTitle();
 
@@ -115,9 +115,9 @@ La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantit
 */
 
 const amazonTable = document.getElementById("tableArea");
+const table = document.createElement("table");
 
 const generateTable = function () {
-  const table = document.createElement("table");
   const thead = document.createElement("thead");
   thead.innerHTML +=
     "<th>Immagine</th><th>Nome prodotto</th><th>Quantità</th><th>Prezzo</th>";
@@ -133,9 +133,9 @@ Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fo
 const addRow = function () {
   const tbody = document.createElement("tbody");
   const row = document.createElement("tr");
-  row.innerHTML = "<tr></tr><tr>Headphones</tr><tr>1</tr><tr>29.99</tr>";
+  row.innerHTML = "<td>https://www.sbsmobile.com/ita/247224-thickbox_default/floxy-cuffie.jpg</td><td>Headphones</td><td>1</td><td>29.99</td>";
   tbody.appendChild(row)
-  amazonTable.appendChild(tbody);
+  table.appendChild(tbody);
 };
 addRow();
 
