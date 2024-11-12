@@ -133,7 +133,7 @@ Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fo
 const addRow = function () {
   const tbody = document.createElement("tbody");
   const row = document.createElement("tr");
-  row.innerHTML = "<td>https://www.sbsmobile.com/ita/247224-thickbox_default/floxy-cuffie.jpg</td><td>Headphones</td><td>1</td><td>29.99</td>";
+  row.innerHTML = '<td><img src = headphones.jpg></td><td>Headphones</td><td>1</td><td>29.99</td>;'
   tbody.appendChild(row)
   table.appendChild(tbody);
 };
