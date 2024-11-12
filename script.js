@@ -90,8 +90,7 @@ Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente
 const makeItClickable = function () {
   const characters = document.querySelector("h1");
   characters.addEventListener("click", function () {
-    let characters2 = characters.slice(0, -1);
-    return characters2;
+    characters.slice(0, -1);
   });
 };
 makeItClickable();
@@ -102,9 +101,11 @@ Crea una funzione che, al click sul footer, riveli l'URL del link interno come c
 
 const revealFooterLink = function () {
   const footer = document.querySelector("footer");
-  footer.addEventListener('click', function() {
-    alert("https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents")
-  })
+  footer.addEventListener("click", function () {
+    alert(
+      "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
+    );
+  });
 };
 revealFooterLink();
 
@@ -113,7 +114,15 @@ Crea una funzione che crei una tabella nell'elemento con id "tableArea".
 La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
 */
 
-const generateTable = function () {};
+const generateTable = function () {
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  thead.innerHTML +=
+    "<th>Immagine</th><th>Nome prodotto</th><th>Quantità</th><th>Prezzo</th>";
+  table.appendChild(thead);
+  document.getElementById("tableArea").appendChild(table);
+};
+generateTable();
 
 /* ESERCIZIO 12
 Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
