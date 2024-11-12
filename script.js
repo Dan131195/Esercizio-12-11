@@ -1,7 +1,7 @@
 /* ESERCIZIO 1
 Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
 */
-const changedTitle = document.querySelector("title");
+const changedTitle = document.querySelector("h1");
 
 const changeTitle = function () {
   changedTitle.innerText = "Esercizio 12-11";
@@ -114,13 +114,15 @@ Crea una funzione che crei una tabella nell'elemento con id "tableArea".
 La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
 */
 
+const amazonTable = document.getElementById("tableArea");
+
 const generateTable = function () {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   thead.innerHTML +=
     "<th>Immagine</th><th>Nome prodotto</th><th>Quantità</th><th>Prezzo</th>";
   table.appendChild(thead);
-  document.getElementById("tableArea").appendChild(table);
+  amazonTable.appendChild(table);
 };
 generateTable();
 
@@ -128,7 +130,14 @@ generateTable();
 Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
 */
 
-const addRow = function () {};
+const addRow = function () {
+  const tbody = document.createElement("tbody");
+  const row = document.createElement("tr");
+  row.innerHTML = "<tr></tr><tr>Headphones</tr><tr>1</tr><tr>29.99</tr>";
+  tbody.appendChild(row)
+  amazonTable.appendChild(tbody);
+};
+addRow();
 
 /* ESERCIZIO 14
 Crea una funzione che nasconda le immagini della tabella quando eseguita
